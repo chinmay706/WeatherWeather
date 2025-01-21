@@ -1,6 +1,6 @@
 # WeatherWeather - Weather Forecast Website
 
-WeatherWeather is a weather forecast web application that not only provides weather data but also offers smart clothing recommendations based on the current weather. Built with modern web technologies, the app uses **Vite**, **React**, **Zustand**, **Immer**, **Axios**, and integrates with the **Gemini API** for clothing suggestions.
+WeatherWeather is a weather forecast web application that not only provides weather data but also offers smart clothing recommendations based on the current weather. Built with modern web technologies, the app uses **Vite**, **React**, **Zustand**, **Immer**,**Recharts**,**Tailwind**, **Axios**, and integrates with the **Gemini API** for clothing suggestions.
 
 ## Live Demo
 
