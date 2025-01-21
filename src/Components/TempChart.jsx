@@ -39,6 +39,8 @@ const labels = [
 
 // Chart.js options function to support light/dark mode
 export const options = (isLightMode) => ({
+  responsive: true,
+  maintainAspectRatio: false, // Disable aspect ratio to control dimensions manually
   scales: {
     y: {
       display: false,
@@ -46,14 +48,13 @@ export const options = (isLightMode) => ({
     x: {
       border: {
         display: false,
-        width: 10,
       },
       grid: {
         display: true,
-        color: isLightMode ? "rgba(0, 0, 0, 0.1)" : "rgba(255, 255, 255, 0.1)", // Dynamic grid line color
+        color: isLightMode ? "rgba(0, 0, 0, 0.1)" : "rgba(255, 255, 255, 0.1)",
       },
       ticks: {
-        color: isLightMode ? "#000" : "#fff", // Dynamic tick color
+        color: isLightMode ? "#000" : "#fff",
         font: {
           family: '"Fira Sans", sans-serif',
           weight: 600,
@@ -62,11 +63,10 @@ export const options = (isLightMode) => ({
       },
     },
   },
-  responsive: true,
   plugins: {
     tooltip: {
       enabled: true,
-      backgroundColor: isLightMode ? "rgba(3, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.8)", // Tooltip background color
+      backgroundColor: isLightMode ? "rgba(3, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.8)",
       titleFont: {
         family: '"Fira Sans", sans-serif',
         size: 16,
@@ -83,7 +83,7 @@ export const options = (isLightMode) => ({
       display: true,
       position: "bottom",
       labels: {
-        color: isLightMode ? "#000" : "#fff", // Dynamic legend text color
+        color: isLightMode ? "#000" : "#fff",
         font: {
           family: '"Fira Sans", sans-serif',
           weight: 600,
@@ -110,10 +110,10 @@ const TempChart = ({ tempsData }) => {
         tension: 0.35,
         label: "Temperature (°C)",
         data: tempsData,
-        borderColor: isLightMode ? "rgba(73, 133, 224, 1)" : "rgba(255, 99, 132, 1)", // Border color
+        borderColor: isLightMode ? "rgba(73, 133, 224, 1)" : "rgba(255, 99, 132, 1)",
         backgroundColor: isLightMode
           ? "rgba(73, 133, 224, 0.5)"
-          : "rgba(255, 99, 132, 0.5)", // Background color
+          : "rgba(255, 99, 132, 0.5)",
         borderWidth: 5,
         radius: 3,
         hoverRadius: 10,
@@ -126,7 +126,9 @@ const TempChart = ({ tempsData }) => {
 
   return (
     <div
-      className={`w-full ${isLightMode ? "bg-white" : "bg-gray-900"} rounded-xl shadow-xl p-6 flex flex-col items-center`}
+      className={`w-full ${
+        isLightMode ? "bg-white" : "bg-gray-900"
+      } rounded-xl shadow-xl p-6 flex flex-col items-center`}
     >
       <div className="flex justify-center items-center mb-6">
         <h2 className={`${isLightMode ? "text-black" : "text-white"} text-3xl font-semibold`}>
@@ -136,13 +138,14 @@ const TempChart = ({ tempsData }) => {
       <div
         className={`p-6 rounded-lg ${isLightMode ? "bg-gray-100" : "bg-gray-800"} w-full`}
         style={{
-          maxWidth: "800px", // Limit chart width for centering
+          maxWidth: "800px",
+          height: "400px", // Fixed height to prevent vertical shrinking
           boxShadow: isLightMode
             ? "0 4px 12px rgba(0, 0, 0, 0.1)"
             : "0 4px 12px rgba(255, 255, 255, 0.2)",
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="relative" style={{ height: "100%" }}>
           <Line options={options(isLightMode)} data={newData} />
         </div>
       </div>
