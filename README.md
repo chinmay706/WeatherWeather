@@ -7,16 +7,20 @@ WeatherWeather is a weather forecast web application that not only provides weat
 You can access the live application here:  
 [WeatherWeather](https://weather-weather-nine.vercel.app/)
 
-### Screenshots
+### Application Screenshots
 
-#### Light Mode
-![Homepage](https://www.imghippo.com/i/cGwB2587FE.JPG)
+- **Light Mode**
+  
+  [![light.jpg](https://i.postimg.cc/J4nKbR9R/light.jpg)](https://postimg.cc/G9WkRnLf)
 
-#### Dark Mode
-![Weather Details Page](https://www.imghippo.com/i/AyUc2151FD.JPG)
+- **Dark Mode**
+  
+  [![dark.jpg](https://i.postimg.cc/X7CBMh5w/dark.jpg)](https://postimg.cc/Whs1g5X3)
 
-#### Gemini Smart clothing recommendations based on weather 
-![Forecast Chart](https://www.imghippo.com/i/tUtU3748a.JPG)
+- **Recommendation Screen**
+  
+  [![recom.jpg](https://i.postimg.cc/nLzQWLGL/recom.jpg)](https://postimg.cc/k2046qZr)
+
 
 
 ## Features
